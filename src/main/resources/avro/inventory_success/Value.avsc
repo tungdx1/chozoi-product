@@ -1,0 +1,26 @@
+{
+    "type": "record",
+    "name": "Value",
+    "namespace": "chozoi.sales.inventory_success",
+    "fields": [
+        {
+            "name": "keep_ids",
+            "type": [
+                "null",
+                {
+                    "type": "array",
+                    "items": [
+                        "null",
+                        "int"
+                    ]
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "id",
+            "type": "long"
+        }
+    ],
+    "connect.name": "chozoi.sales.inventory_success.Value"
+}

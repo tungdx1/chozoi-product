@@ -1,0 +1,112 @@
+{
+    "type": "record",
+    "name": "Value",
+    "namespace": "chozoi.shops.official_store_template",
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        },
+        {
+            "name": "shop_id",
+            "type": "int"
+        },
+        {
+            "name": "name",
+            "type": "string"
+        },
+        {
+            "name": "state",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null
+        },
+        {
+            "name": "coupons",
+            "type": [
+                "null",
+                {
+                    "type": "string",
+                    "connect.version": 1,
+                    "connect.name": "io.debezium.data.Json"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "main_banner",
+            "type": [
+                "null",
+                {
+                    "type": "string",
+                    "connect.version": 1,
+                    "connect.name": "io.debezium.data.Json"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "pic_products",
+            "type": [
+                "null",
+                {
+                    "type": "string",
+                    "connect.version": 1,
+                    "connect.name": "io.debezium.data.Json"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "sub_banner",
+            "type": [
+                "null",
+                {
+                    "type": "string",
+                    "connect.version": 1,
+                    "connect.name": "io.debezium.data.Json"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "created_at",
+            "type": [
+                "null",
+                {
+                    "type": "long",
+                    "connect.version": 1,
+                    "connect.name": "io.debezium.time.MicroTimestamp"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "updated_at",
+            "type": [
+                "null",
+                {
+                    "type": "long",
+                    "connect.version": 1,
+                    "connect.name": "io.debezium.time.MicroTimestamp"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "logo",
+            "type": [
+                "null",
+                {
+                    "type": "string",
+                    "connect.version": 1,
+                    "connect.name": "io.debezium.data.Json"
+                }
+            ],
+            "default": null
+        }
+    ],
+    "connect.name": "chozoi.shops.official_store_template.Value"
+}

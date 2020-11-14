@@ -1,0 +1,59 @@
+{
+    "type": "record",
+    "name": "Value",
+    "namespace": "chozoi.comments.review",
+    "fields": [
+        {
+            "name": "id",
+            "type": "long"
+        },
+        {
+            "name": "user_id",
+            "type": "int"
+        },
+        {
+            "name": "product_id",
+            "type": "int"
+        },
+        {
+            "name": "rating",
+            "type": {
+                "type": "int",
+                "connect.type": "int16"
+            }
+        },
+        {
+            "name": "text",
+            "type": "string"
+        },
+        {
+            "name": "state",
+            "type": "string"
+        },
+        {
+            "name": "created_at",
+            "type": [
+                "null",
+                {
+                    "type": "long",
+                    "connect.version": 1,
+                    "connect.name": "io.debezium.time.MicroTimestamp"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "updated_at",
+            "type": [
+                "null",
+                {
+                    "type": "long",
+                    "connect.version": 1,
+                    "connect.name": "io.debezium.time.MicroTimestamp"
+                }
+            ],
+            "default": null
+        }
+    ],
+    "connect.name": "chozoi.comments.review.Value"
+}

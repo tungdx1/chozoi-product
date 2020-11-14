@@ -1,0 +1,90 @@
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+    topic:
+      num-partitions: ${KAFKA_NUM_PARTITIONS}
+      replication-factor: ${KAFKA_REPLICATION_FACTOR}
+    producer:
+      acks: all
+      retries: 100
+      key-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      properties:
+        schema.registry.url: ${SCHEMA_REGISTRY_URL}
+        specific.avro.reader: true
+      template:
+        default-topic: test
+    consumer:
+      enable-auto-commit: false
+      auto-offset-reset: earliest
+      group-id: ${KAFKA_GROUP_ID}
+      key-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        schema.registry.url: ${SCHEMA_REGISTRY_URL}
+        specific.avro.reader: true
+  datasource:
+    url: ${POSTGRE_DATABASE_URL}
+    username: ${POSTGRE_USER}
+    password: ${POSTGRE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: ${POSTGRE_MAXIMUM_POOL_SIZE}
+  data:
+    elasticsearch:
+      cluster-name: ${ELASTICSEARCH_CLUSTER}
+      cluster-nodes: ${ELASTICSEARCH_TRANSPORT_HOST}
+      cluster-url: ${ELASTICSEARCH_HOST}
+      repositories:
+        enabled: true
+    mongodb:
+      uri: ${MONGODB_URI}
+    web:
+      pageable:
+        size-parameter: size
+        page-parameter: page
+        default-page-size: 20
+        max-page-size: 100
+      sort:
+        sort-parameter: sort
+  jpa:
+    show-sql: ${DEBUG}
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      show_sql: false
+      ddl-auto: none
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+
+  batch:
+    initialize-schema: always
+  main:
+    allow-bean-definition-overriding: true
+
+  cache:
+    type: redis
+    redis:
+      time-to-live: 86400000
+  redis:
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT}
+debug: ${DEBUG}
+server:
+  port: ${PORT}
+logging:
+  level:
+    com.chozoi: ${LOG_LEVEL}
+    org.springframework: ${LOG_LEVEL}
+    org.hibernate: ${LOG_LEVEL}
+writable: ${WRITABLE}
+environment: ${ENVIRONTMENT}
+predictionio:
+  accessKey: ${PREDICTION_ACCESS_KEY} #Z_T0p2uGQNTSUNNRVmlvCYFVP4gicG2nSX4BqSk1G-GgTYYTBq8S8QQQB2stdA1x
+  eventUrl: ${PREDICTION_EVENT_URL} #https://event.recommendation.svc.chozoi.services
+  engineUrl:  ${PREDICTION_ENGINE_URL} #https://ur.recommendation.svc.chozoi.services
+  # https://ur.recommendation.svc.chozoi.services
+  # https://mer.recommendation.svc.chozoi.services

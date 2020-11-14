@@ -1,0 +1,12 @@
+{
+    "type": "record",
+    "name": "Key",
+    "namespace": "chozoi.sales.inventory_success",
+    "fields": [
+        {
+            "name": "id",
+            "type": "long"
+        }
+    ],
+    "connect.name": "chozoi.sales.inventory_success.Key"
+}

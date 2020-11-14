@@ -1,0 +1,174 @@
+{
+    "type": "record",
+    "name": "Value",
+    "namespace": "chozoi.sales.order_line",
+    "fields": [
+        {
+            "name": "id",
+            "type": "long"
+        },
+        {
+            "name": "shop_order_id",
+            "type": "long"
+        },
+        {
+            "name": "product_id",
+            "type": "long"
+        },
+        {
+            "name": "product_variant_id",
+            "type": "long"
+        },
+        {
+            "name": "product_name",
+            "type": "string"
+        },
+        {
+            "name": "quantity",
+            "type": "int"
+        },
+        {
+            "name": "price_unit",
+            "type": "long"
+        },
+        {
+            "name": "created_at",
+            "type": {
+                "type": "long",
+                "connect.version": 1,
+                "connect.name": "io.debezium.time.MicroTimestamp"
+            }
+        },
+        {
+            "name": "updated_at",
+            "type": {
+                "type": "long",
+                "connect.version": 1,
+                "connect.name": "io.debezium.time.MicroTimestamp"
+            }
+        },
+        {
+            "name": "weight",
+            "type": "int"
+        },
+        {
+            "name": "packing_size",
+            "type": {
+                "type": "array",
+                "items": [
+                    "null",
+                    "int"
+                ]
+            }
+        },
+        {
+            "name": "product_attributes",
+            "type": [
+                "null",
+                {
+                    "type": "string",
+                    "connect.version": 1,
+                    "connect.name": "io.debezium.data.Json"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "product_image",
+            "type": "string"
+        },
+        {
+            "name": "commission_category",
+            "type": {
+                "type": "string",
+                "connect.version": 1,
+                "connect.name": "io.debezium.data.Json"
+            }
+        },
+        {
+            "name": "shipping_fee_unit",
+            "type": "long"
+        },
+        {
+            "name": "payment_fee_unit",
+            "type": "long"
+        },
+        {
+            "name": "return_quantity",
+            "type": "int"
+        },
+        {
+            "name": "suceeded_at",
+            "type": [
+                "null",
+                {
+                    "type": "long",
+                    "connect.version": 1,
+                    "connect.name": "io.debezium.time.MicroTimestamp"
+                }
+            ],
+            "default": null
+        },
+        {
+            "name": "insurance_fee_unit",
+            "type": "long"
+        },
+        {
+            "name": "shipping_extra_fee_unit",
+            "type": "long"
+        },
+        {
+            "name": "commission_cate_fee_unit",
+            "type": "long"
+        },
+        {
+            "name": "sku",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null
+        },
+        {
+            "name": "state",
+            "type": "string"
+        },
+        {
+            "name": "shipping_actual_fee_unit",
+            "type": "long"
+        },
+        {
+            "name": "shipping_suport_fee_unit",
+            "type": "long"
+        },
+        {
+            "name": "category_id",
+            "type": [
+                "null",
+                "int"
+            ],
+            "default": null
+        },
+        {
+            "name": "product_condition",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null
+        },
+        {
+            "name": "product_type",
+            "type": [
+                "null",
+                "string"
+            ],
+            "default": null
+        },
+        {
+            "name": "is_free_ship",
+            "type": "boolean"
+        }
+    ],
+    "connect.name": "chozoi.sales.order_line.Value"
+}

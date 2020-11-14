@@ -1,0 +1,12 @@
+{
+    "type": "record",
+    "name": "Key",
+    "namespace": "chozoi.comments.review",
+    "fields": [
+        {
+            "name": "id",
+            "type": "long"
+        }
+    ],
+    "connect.name": "chozoi.comments.review.Key"
+}

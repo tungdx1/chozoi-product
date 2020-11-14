@@ -1,0 +1,27 @@
+{
+  "namespace": "com.chozoi.emailservice.domain.avro",
+  "name": "MailMessage",
+  "type": "record",
+  "fields": [
+    {
+      "name": "emailTo",
+      "type": "string"
+    },
+    {
+       "name": "type",
+       "type": "string"
+    },
+    {
+       "name": "sendType",
+       "type": "string"
+    },
+    {
+      "name": "body",
+      "type": {
+        "type": "map",
+        "values": "string"
+      },
+      "default": {}
+    }
+  ]
+}

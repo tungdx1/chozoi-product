@@ -1,0 +1,12 @@
+{
+    "type": "record",
+    "name": "Key",
+    "namespace": "chozoi.shops.official_store_template",
+    "fields": [
+        {
+            "name": "id",
+            "type": "int"
+        }
+    ],
+    "connect.name": "chozoi.shops.official_store_template.Key"
+}

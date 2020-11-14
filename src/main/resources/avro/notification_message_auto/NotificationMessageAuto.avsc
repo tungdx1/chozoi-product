@@ -1,0 +1,27 @@
+{
+  "namespace": "com.chozoi.event.message",
+  "name": "NotificationMessageAuto",
+    "type": "record",
+    "fields": [
+      {
+         "name": "sendTo",
+         "type": "string"
+      },
+      {
+         "name": "type",
+         "type": "string"
+      },
+      {
+         "name": "sendType",
+         "type": "string"
+      },
+      {
+        "name": "body",
+        "type": {
+          "type": "map",
+          "values": "string"
+        },
+        "default": {}
+      }
+    ]
+}

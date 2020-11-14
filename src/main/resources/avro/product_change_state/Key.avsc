@@ -1,0 +1,12 @@
+{
+    "type": "record",
+    "name": "Key",
+    "namespace": "message.product.accept",
+    "fields": [
+        {
+            "name": "id",
+            "type": "long"
+        }
+    ],
+    "connect.name": "message.product.accept.Key"
+}

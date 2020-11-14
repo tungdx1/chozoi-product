@@ -1,0 +1,31 @@
+{
+  "type": "record",
+  "name": "Value",
+  "namespace": "com.chozoi.auction.avro.event",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "type": "string"
+    },
+    {
+      "name": "version",
+      "type": "int"
+    },
+    {
+      "name": "aggregate",
+      "type": "string"
+    },
+    {
+      "name": "content",
+      "type": "bytes"
+    },
+    {
+      "name": "created_at",
+      "type": "long"
+    }
+  ]
+}

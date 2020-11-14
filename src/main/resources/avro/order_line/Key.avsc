@@ -1,0 +1,12 @@
+{
+    "type": "record",
+    "name": "Key",
+    "namespace": "chozoi.sales.order_line",
+    "fields": [
+        {
+            "name": "id",
+            "type": "long"
+        }
+    ],
+    "connect.name": "chozoi.sales.order_line.Key"
+}
